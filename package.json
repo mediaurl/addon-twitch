@@ -10,7 +10,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@mediaurl/sdk": "1.0.0",
+    "@mediaurl/sdk": "^1.0.1",
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.1",
     "url": "0.11.0"

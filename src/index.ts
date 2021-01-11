@@ -43,4 +43,4 @@ twitchAddon.registerActionHandler('source', async (input, ctx) => {
   return [];
 });
 
-runCli([twitchAddon]);
+runCli([twitchAddon], { singleMode: true });
