@@ -1,4 +1,4 @@
-import { createWorkerAddon } from '@watchedcom/sdk';
+import { createWorkerAddon, runCli } from '@mediaurl/sdk';
 import twitch from './twitch';
 
 export const twitchAddon = createWorkerAddon({
@@ -42,3 +42,5 @@ twitchAddon.registerActionHandler('item', async (input, ctx) => {
 twitchAddon.registerActionHandler('source', async (input, ctx) => {
   return [];
 });
+
+runCli([twitchAddon]);

@@ -1,4 +1,4 @@
-import { ChannelItem, DirectoryItem, DirectoryFeatures, DirectoryRequest } from '@watchedcom/sdk';
+import { ChannelItem, DirectoryItem, DirectoryFeatures, DirectoryRequest } from '@mediaurl/sdk';
 import fetch from 'node-fetch';
 import { parse as parseUrl, format as formatUrl } from 'url';
 import _locales from './locales';
@@ -142,9 +142,7 @@ class TwitchApi {
   }
 
   getImage(url: string, w = 285, h = 380) {
-    return String(url)
-      .replace('{width}', String(w))
-      .replace('{height}', String(h));
+    return String(url).replace('{width}', String(w)).replace('{height}', String(h));
   }
 
   convertGame(data: any): DirectoryItem {
@@ -178,7 +176,7 @@ class TwitchApi {
     };
     if (data.videoUrl) {
       channel.sources?.push({
-        id: channel.id,
+        id: <string>channel.id,
         name: channel.name,
         type: 'url',
         url: data.videoUrl,
@@ -186,7 +184,7 @@ class TwitchApi {
     }
     if (data.externalUrl) {
       channel.sources?.push({
-        id: channel.id,
+        id: <string>channel.id,
         name: channel.name,
         type: 'externalUrl',
         url: data.externalUrl,
